@@ -34,8 +34,8 @@ const MetricsDashboard: React.FC = () => {
         }
       );
       setMetrics(response.data.data);
-    } catch (err: any) {
-      setError(err.response?.data?.error || 'Failed to fetch metrics');
+    } catch (err: unknown) {
+      setError('Failed to fetch metrics');
       setMetrics(null);
     } finally {
       setLoading(false);
